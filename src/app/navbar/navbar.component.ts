@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-navbar',

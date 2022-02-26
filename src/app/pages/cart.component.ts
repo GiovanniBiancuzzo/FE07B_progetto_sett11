@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
-import { Products } from '../models/products';
-
-
+import { Product } from '../models/products';
 
 @Component({
   template: `
     <div class="container">
       <h2>Articoli</h2>
       <ul>
-        <li *ngFor="let product of products">{{product.name}} {{product.price}}</li>
+        <li *ngFor="let item of cartList">{{item.name}} {{item.price}}</li>
       </ul>
       <h2>Completa ordine</h2>
       <form >
@@ -26,11 +24,13 @@ import { Products } from '../models/products';
 })
 export class CartComponent implements OnInit {
 
-  products! : Products[];
+  cartList! : Product[];
 
-  constructor(private cart: CartService) { }
+  constructor(private cartSrv: CartService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {//al caricamento della pagina get del carrello
+    this.cartList = this.cartSrv.getCart();
   }
+
 
 }

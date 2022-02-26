@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Products } from './models/products';
+import { Injectable, Input } from '@angular/core';
+import { Product } from './models/products';
 
 @Injectable({
   providedIn: 'root'
@@ -7,17 +7,21 @@ import { Products } from './models/products';
 
 export class CartService {
 
-  cartList: Products[] = [];//array carrello
-  cart: Number = 0;//variabile per incrementare il numero del carrello
+  cartList: Product[] = [];//array carrello
+  @Input() cartItems!: Number;//variabile per incrementare il numero del carrello
   constructor() { }
 
-  addToCart(product: Products) {
+  getCart () {
+    return this.cartList;
+  }
+
+  addProduct(product: Product) {
     this.cartList = [...this.cartList, product];
-    //this.cart = this.cart + 1;
+    this.cartItems = +this.cartItems + 1;
   }
 
   clearCart() {//svuota il carrello
     this.cartList = [];
-    this.cart = 0;
+    this.cartItems = 0;
   }
 }

@@ -18,7 +18,7 @@ const routes: Route[] = [
   },
   {
     path: 'products/:id',
-    component: CardComponent
+    component: ProductComponent
   },
   {
     path: 'cart',
