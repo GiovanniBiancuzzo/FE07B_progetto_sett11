@@ -11,11 +11,11 @@ export class CartService {
   @Input() cartItems!: Number;//variabile per incrementare il numero del carrello
   constructor() { }
 
-  getCart () {
+  getCart () {//stampa carrello
     return this.cartList;
   }
 
-  addProduct(product: Product) {
+  addProduct(product: Product) {//aggiunta elemento e incremento contatore
     this.cartList = [...this.cartList, product];
     this.cartItems = +this.cartItems + 1;
   }

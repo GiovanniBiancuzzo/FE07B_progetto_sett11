@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Product } from '../models/products';
 
-@Component({
+@Component({//carrello poco dettagliato, non funzionando il dettaglio prodotti non l'ho rivisto troppo
   template: `
     <div class="container">
       <h2>Articoli</h2>
