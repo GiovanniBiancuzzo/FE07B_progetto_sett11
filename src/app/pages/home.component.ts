@@ -20,13 +20,9 @@ export class HomeComponent implements OnInit {
   constructor(private prdSrv: ProductsService) { }
 
   ngOnInit(): void {
-      this.prdSrv.getProducts().subscribe(products => {
+      this.prdSrv.getProducts().subscribe(products => {//stampa, al loading della pagina, i prodotti
 			this.products = products;
       console.log(products);
     })
   }
-
-
-
-
 }
